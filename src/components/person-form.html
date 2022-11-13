@@ -1,0 +1,17 @@
+<template>
+  <form>
+    <fieldset>
+      <label>First Name</label>
+      <input type="text" value.bind="person.firstName" />
+    </fieldset>
+    <fieldset>
+      <label>Last Name</label>
+      <input type="text" value.bind="person.lastName" />
+    </fieldset>
+    <fieldset>
+      <label>Age</label>
+      <input type="number" value.bind="person.age" />
+    </fieldset>
+    <button type="button" click.delegate="onSaveClick()">Save</button>
+  </form>
+</template>

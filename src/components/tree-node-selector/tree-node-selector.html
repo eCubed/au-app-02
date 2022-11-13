@@ -1,0 +1,12 @@
+<template>
+  <select value.bind="selectedTreeNodeAtLevel" change.delegate="onSelectionChanged(selectedTreeNodeAtLevel)">
+    <option model.bind="null">Select...</option>
+    <option repeat.for="treeNode of treeNodes" model.bind="treeNode">${treeNode.name}</option>
+  </select>
+
+  <template if.bind="selectedTreeNodeAtLevel != null && selectedTreeNodeAtLevel.children.length > 0">
+    <tree-node-selector tree-nodes.bind="selectedTreeNodeAtLevel.children"
+      selected-tree-node-id.bind="selectedTreeNodeId"
+      selected-tree-node-changed.call="onSelectedTreeNodeChanged(treeNode)"></tree-node-selector>
+  </template>
+</template>

@@ -1,0 +1,8 @@
+<template>
+  <require from="../components/tree-node-selector/tree-node-selector"></require>
+  <h1>Tests</h1>
+  <tree-node-selector tree-nodes.bind="treeNodes" selected-tree-node-id.bind="selectedTreeNodeId"
+    selected-tree-node-changed.call="onSelectedTreeNodeChanged(treeNode)">
+  </tree-node-selector>
+  ${selectedTreeNodeId}
+</template>

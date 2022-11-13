@@ -1,0 +1,10 @@
+<template>
+  <require from="../components/person-form"></require>
+  <require from="../components/physical-box"></require>
+  <t1>home</t1>
+  <person-form person.bind="person" save-request.call="onSaveRequest(person)"></person-form>
+  <div>
+    <input type="number" value.bind="widthPx" /> ${widthPx}
+  </div>
+  <physical-box height-px="100" width-px.bind="widthPx"></physical-box>
+</template>

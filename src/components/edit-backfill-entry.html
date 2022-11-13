@@ -1,0 +1,9 @@
+<template>
+  <require from="../utils/datetostringvalueconverter"></require>
+  <div>
+    <input type='text' value.bind='backfillEntry.start | dateToString & updateTrigger:"blur"' />
+    <input type='text' value.bind='backfillEntry.end | dateToString & updateTrigger:"blur"' />
+    <input type='number' value.bind='backfillEntry.workCenterId' />
+
+  </div>
+</template>

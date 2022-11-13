@@ -1,0 +1,20 @@
+<template>
+  <require from='../utils/datetostringvalueconverter'></require>
+  <require from='../utils/jsonvalueconverter'></require>
+  <require from='../components/edit-backfill-entry'></require>
+  <h1>${message}</h1>
+  <select value.bind="currentTimeZone">
+    <option repeat.for="tz of timeZones" value.bind="tz">${tz}</option>
+  </select>
+  <div>
+    WCE: <input type="number" value.bind="currentWorkCenterId" />
+  </div>
+  <edit-backfill-entry repeat.for="bfe of backfillEntries" backfill-entry.bind="bfe">
+  </edit-backfill-entry>
+  
+  <button click.delegate="addBackfillEntry()">Add BFE</button><br/>
+  <button click.delegate="showBackfillEntries()">Show BFEs</button>
+  <div>
+    ${ backfillEntries | json }
+  </div>
+</template>
